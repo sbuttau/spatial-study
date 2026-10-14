@@ -1,6 +1,6 @@
 trial_id,set,type,image,question,answer,frame,task
 p1,practice,practice,images/teddy_dog.jpg,"Relative to the viewer, is the dog below the teddy bear?",yes,Viewer,Position
 1,1,main,images/pinocchio_airplane.jpg,"Relative to the viewer, is the airplane in front of Pinocchio?",yes,Viewer,Position
-2,1,main,images/bunny_duck.jpg,"Relative to the bunny's coordinate axis, is the toy duck facing forward?",,Object,Orientation
-3,1,main,images/teddy_penguin.jpg,"Relative to the teddy bear's body coordinate axis, is the penguin below the teddy bear?",,Body,Position
-4,1,main,images/bunny_elephant.jpg,"Relative to the bunny's coordinate axis, is the elephant to the left of the bunny?",,Object,Position
+2,1,main,images/bunny_duck.jpg,"Relative to the bunny's head coordinate axis, is the toy duck facing forward?",no,Object,Orientation
+3,1,main,images/teddy_penguin.jpg,"Relative to the teddy bear's body coordinate axis, is the penguin facing left?",yes,Body,Position
+4,1,main,images/bunny_elephant.jpg,"Relative to the bunny's body coordinate axis, is the elephant to the left of the bunny?",no,Object,Position
