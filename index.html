@@ -50,9 +50,7 @@
   .muted { color: var(--muted); }
 
   /* Intro: page 1 is one reading column; page 2 is wider so the points-of-view figure shows near full size */
-  /* Intro: page 1 is one reading column; page 2 is wider so the points-of-view figure shows near full size */
   .sheet.intro { max-width: 720px; }
-  .sheet.intro.frames-page { max-width: 960px; }
   .sheet.intro.frames-page { max-width: 960px; }
   .intro ul { margin: 0 0 14px; padding-left: 1.1em; }
   .intro li { margin-bottom: 10px; }
@@ -60,7 +58,6 @@
 
   .frames { margin: 20px 0 24px; }
   .frames-scroll { background: #fff; border-radius: 6px; }
-  .frames-scroll img { display: block; width: 100%; max-width: 881px; height: auto; margin: 0 auto; }   /* fits the screen, never enlarged past its real size (blurry) */
   .frames-scroll img { display: block; width: 100%; max-width: 881px; height: auto; margin: 0 auto; }   /* fits the screen, never enlarged past its real size (blurry) */
   .frames figcaption { font-size: 0.95rem; color: var(--muted); margin-top: 10px; }
 
@@ -138,7 +135,8 @@
   <h2>Each question tells you from whose point of view to answer</h2>
   <ul>
     <li><strong>“Relative to the viewer”</strong>: your point of view. Left and right as you see them on the screen; “in front of” means closer to you.</li>
-<li><strong>“Relative to the teddy bear’s coordinate axes”</strong> (or another reference object’s): the reference object’s point of view. Imagine standing in its place, facing the same way it faces. When it faces you, its left is your right.</li>    <li><strong>“…body coordinate axes” or “…head coordinate axes”</strong>: sometimes the reference object turns its head, so its body and its head face different directions. Use the part the question names.</li>
+    <li><strong>“Relative to the teddy bear’s coordinate axes”</strong> (or another reference object’s): the reference object’s point of view. Imagine standing in its place, facing the same way it faces. When it faces you, its left is your right.</li>
+    <li><strong>“…body coordinate axes” or “…head coordinate axes”</strong>: sometimes the reference object turns its head, so its body and its head face different directions. Use the part the question names.</li>
     <!-- TODO: add one line saying what "facing forward / backward / left / right" means in your benchmark. -->
   </ul>
   <p>There are no trick questions and there is no time limit, but please answer every question as accurately as you can.<span class="keys-hint"> You can use the buttons or the <kbd>Y</kbd> and <kbd>N</kbd> keys.</span></p>
@@ -146,10 +144,7 @@
 </template>
 
 <!-- Second intro page: the points-of-view figure, shown large. Replace the image file to change it. -->
-<!-- Second intro page: the points-of-view figure, shown large. Replace the image file to change it. -->
 <template id="intro-figure">
-  <h1>The points of view</h1>
-  <p>The same directions (left, right, front, behind, up) can be measured from the viewer, from a whole object, or from one of its parts. Take a moment to look at each example.</p>
   <h1>The points of view</h1>
   <p>The same directions (left, right, front, behind, up) can be measured from the viewer, from a whole object, or from one of its parts. Take a moment to look at each example.</p>
   <figure class="frames">
@@ -158,9 +153,7 @@
            alt="Four examples of points of view: the viewer's (left, right, front, behind as seen by the camera), a whole object's (the teddy bear's own up, front and right), and a part's (the bunny's and Pinocchio's head, with their own front and left or right).">
     </div>
     <figcaption>From left to right: the viewer's point of view; the teddy bear's own (object) point of view; the bunny's head and Pinocchio's head (part) points of view. The arrows show each one's own up, front, left and right.</figcaption>
-    <figcaption>From left to right: the viewer's point of view; the teddy bear's own (object) point of view; the bunny's head and Pinocchio's head (part) points of view. The arrows show each one's own up, front, left and right.</figcaption>
   </figure>
-  <p class="consent">Participation is voluntary and anonymous: we only record your answers, and you can stop at any time. By continuing, you agree to take part.</p>
   <p class="consent">Participation is voluntary and anonymous: we only record your answers, and you can stop at any time. By continuing, you agree to take part.</p>
 </template>
 
@@ -265,19 +258,7 @@ function renderIntro() {
 }
 
 function renderFramesIntro() {
-  render(`${text}<div class="actions"><button class="primary" id="next">Next</button></div>`, "sheet intro");
-  document.getElementById("next").onclick = renderFramesIntro;
-  preload(S.practice.length ? S.practice : S.main, 0, 3);
-}
-
-function renderFramesIntro() {
   const figure = document.getElementById("intro-figure").innerHTML;
-  render(`${figure}<div class="actions">
-      <button class="primary" id="start">I agree, start</button>
-      <button class="secondary" id="back">Back</button>
-    </div>`, "sheet intro frames-page");
-  scrollTo(0, 0);
-  document.getElementById("back").onclick = () => { renderIntro(); scrollTo(0, 0); };
   render(`${figure}<div class="actions">
       <button class="primary" id="start">I agree, start</button>
       <button class="secondary" id="back">Back</button>
