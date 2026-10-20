@@ -168,6 +168,7 @@ const CONFIG = {
   COMPLETION_URL: "",      // optional: link shown at the end (e.g. your Prolific completion URL)
   CONTACT_EMAIL: "",       // shown if answers can't be sent
   INTER_TRIAL_MS: 300,     // blank pause between questions
+  SET_FROM_LINK_ONLY: true, // true = the link must say ?set=N (you assign sets yourself); false = sets are assigned automatically
   STUDY_ID: "spatial-study",
 };
 /* ==================================================== */
@@ -494,7 +495,9 @@ async function assignSet(sets, sessionId) {
 
 async function init() {
   const saved = store.load();
-  if (saved && saved.v === 1 && ["practice", "main", "submit"].includes(saved.phase)) { S = saved; return renderResume(); }
+  const linkSet = params.get("set");
+  const sameSet = !linkSet || !saved || String(saved.set) === linkSet;   // a link for another set starts fresh
+  if (saved && saved.v === 1 && sameSet && ["practice", "main", "submit"].includes(saved.phase)) { S = saved; return renderResume(); }
 
   if (location.protocol === "file:") {
     return renderError("Open this page through a web address",
@@ -519,6 +522,11 @@ async function init() {
   const session_id = uid();
   const participant_id = params.get("pid") || params.get("PROLIFIC_PID") || "anon-" + session_id.slice(0, 6);
   const asked = params.get("set");
+  if (CONFIG.SET_FROM_LINK_ONLY && !(asked && sets.includes(asked))) {
+    const contact = CONFIG.CONTACT_EMAIL ? ` at ${CONFIG.CONTACT_EMAIL}` : "";
+    return renderError("This link isn't complete",
+      `Please use the exact link you were sent, or contact the researcher${contact} for a new one.`);
+  }
   const set = asked && sets.includes(asked) ? asked : await assignSet(sets, session_id);
 
   S = {
