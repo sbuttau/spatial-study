@@ -139,7 +139,7 @@
     <li><strong>“…body coordinate axes” or “…head coordinate axes”</strong>: sometimes the reference object turns its head, so its body and its head face different directions. Use the part the question names.</li>
     <!-- TODO: add one line saying what "facing forward / backward / left / right" means in your benchmark. -->
   </ul>
-  <p>There are no trick questions and there is no time limit, but please answer every question as accurately as you can.<span class="keys-hint"> You can use the buttons or the <kbd>Y</kbd> and <kbd>N</kbd> keys.</span></p>
+  <p>There are no trick questions and there is no time limit. We also record how long you take to answer, but this does not affect your score: what matters is answering as accurately as you can.<span class="keys-hint"> You can use the buttons or the <kbd>Y</kbd> and <kbd>N</kbd> keys.</span></p>
   <p class="muted">On the next page you'll see an example of each point of view.</p>
 </template>
 
@@ -154,7 +154,7 @@
     </div>
     <figcaption>From left to right: the viewer's point of view; the teddy bear's own (object) point of view; the bunny's head and Pinocchio's head (part) points of view. The arrows show each one's own up, front, left and right.</figcaption>
   </figure>
-  <p class="consent">Participation is voluntary and anonymous: we only record your answers, and you can stop at any time. By continuing, you agree to take part.</p>
+  <p class="consent">Participation is voluntary and you can stop at any time. We record your answers and response times under a participant code, not your name; only the research team can link the code to your identity, and results will be reported only in aggregate. By continuing, you agree to take part.</p>
 </template>
 
 <script>
@@ -451,18 +451,26 @@ function finish() {
   renderDone(false);
 }
 
+function scoreSummary() {
+  const scored = S.results.filter((r) => r.phase === "main" && r.correct !== "");
+  if (!scored.length) return "";
+  const n = scored.filter((r) => r.correct === 1).length;
+  return `<p>You answered <strong>${n} out of ${scored.length}</strong> questions correctly (${Math.round(100 * n / scored.length)}%).</p>`;
+}
+
 function renderDone(demo) {
   const link = CONFIG.COMPLETION_URL
     ? `<div class="actions"><a class="button primary" href="${esc(CONFIG.COMPLETION_URL)}">Finish the study</a></div>` : "";
   if (demo) {
     render(`
       <h1>Thank you!</h1>
+      ${scoreSummary()}
       <p>This page is in demo mode, so your answers weren't sent anywhere. Add the endpoint URL in <code>CONFIG</code> to save answers to the sheet.</p>
       <div class="actions"><button class="secondary" id="dl">Download answers (CSV)</button></div>`);
     document.getElementById("dl").onclick = () => download(`answers_${S.participant_id}.csv`, toCSV(S.results));
     return;
   }
-  render(`<h1>Thank you!</h1><p>Your answers have been saved. You can close this page.</p>${link}`);
+  render(`<h1>Thank you!</h1>${scoreSummary()}<p>Your answers have been saved. You can close this page.</p>${link}`);
 }
 
 function renderSendFailed() {
