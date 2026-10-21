@@ -1,0 +1,294 @@
+trial_id,set,type,image,question,answer,frame,task
+p1,practice,practice,images/teddy_dog.jpg,"Relative to the viewer, is the dog below the teddy bear?",yes,Viewer,Position
+p2,practice,practice,images/pinocchio_airplane.jpg,"Relative to the viewer, is the airplane in front of Pinocchio?",yes,Viewer,Position
+p3,practice,practice,images/bunny_duck.jpg,"Relative to the bunny's head coordinate axes, is the toy duck facing forward?",no,Head,Orientation
+p4,practice,practice,images/teddy_penguin.jpg,"Relative to the teddy bear's body coordinate axes, is the penguin facing left?",yes,Body,Orientation
+p5,practice,practice,images/bunny_elephant.jpg,"Relative to the bunny's body coordinate axes, is the elephant to the left of the bunny?",no,Body,Position
+q_015,1,main,images/q_015_viewer_position_Elephant_fb_a_rot180_cam120.jpg,"Relative to the viewer, is the elephant in front of the teddy bear?",no,Viewer,Position
+q_017,1,main,images/q_017_viewer_position_Toy_Train_lr_b_rot270_cam150.jpg,"Relative to the viewer, is the toy train in front of Pinocchio?",yes,Viewer,Position
+q_019,1,main,images/q_019_viewer_position_Penguin_up_rot270_cam180.jpg,"Relative to the viewer, is the penguin below the bunny?",yes,Viewer,Position
+q_020,1,main,images/q_020_viewer_position_Airplane_lr_b_rot90_cam180.jpg,"Relative to the viewer, is the airplane to the right of Pinocchio?",no,Viewer,Position
+q_021,1,main,images/q_021_viewer_position_Piggy_bank_lr_a_rot90_cam180.jpg,"Relative to the viewer, is the piggy bank to the right of the teddy bear?",yes,Viewer,Position
+q_030,1,main,images/q_030_viewer_position_Cat_down_rot270_cam270.jpg,"Relative to the viewer, is the cat to the right of the teddy bear?",no,Viewer,Position
+q_038,1,main,images/q_038_viewer_orientation_Toy_Duck_lr_a_rot270_cam000.jpg,"Relative to the viewer, is the toy duck facing left?",yes,Viewer,Orientation
+q_040,1,main,images/q_040_viewer_orientation_Piggy_bank_fb_b_rot0_cam030.jpg,"Relative to the viewer, is the piggy bank facing forward?",yes,Viewer,Orientation
+q_046,1,main,images/q_046_viewer_orientation_Toy_Duck_fb_a_rot180_cam090.jpg,"Relative to the viewer, is the toy duck facing left?",no,Viewer,Orientation
+q_049,1,main,images/q_049_viewer_orientation_Penguin_down_rot270_cam120.jpg,"Relative to the viewer, is the penguin facing left?",no,Viewer,Orientation
+q_061,1,main,images/q_061_viewer_orientation_Toy_Duck_fb_b_rot180_cam240.jpg,"Relative to the viewer, is the toy duck facing right?",no,Viewer,Orientation
+q_067,1,main,images/q_067_viewer_orientation_Robot_down_rot270_cam300.jpg,"Relative to the viewer, is the robot facing left?",yes,Viewer,Orientation
+q_081,1,main,images/q_081_object_position_Toy_Train_lr_a_rot270_cam060.jpg,"Relative to the teddy bear's coordinate axes, is the toy train to the right of the teddy bear?",yes,Object,Position
+q_087,1,main,images/q_087_object_position_Airplane_teddy_under_target_on_rot270_cam120.jpg,"Relative to the teddy bear's coordinate axes, is the airplane below the teddy bear?",no,Object,Position
+q_090,1,main,images/q_090_object_position_Robot_up_rot270_cam150.jpg,"Relative to the teddy bear's coordinate axes, is the robot above the teddy bear?",yes,Object,Position
+q_099,1,main,images/q_099_object_position_Dog_fb_a_rot180_cam240.jpg,"Relative to the teddy bear's coordinate axes, is the dog in front of the teddy bear?",yes,Object,Position
+q_105,1,main,images/q_105_object_position_Cat_fb_a_rot180_cam300.jpg,"Relative to the teddy bear's coordinate axes, is the cat behind the teddy bear?",no,Object,Position
+q_106,1,main,images/q_106_object_position_Elephant_fb_b_rot180_cam330.jpg,"Relative to the bunny's coordinate axes, is the elephant in front of the bunny?",no,Object,Position
+q_117,1,main,images/q_117_object_orientation_Elephant_up_rot90_cam060.jpg,"Relative to the teddy bear's coordinate axes, is the elephant facing right?",no,Object,Orientation
+q_118,1,main,images/q_118_object_orientation_Car_fb_b_rot180_cam090.jpg,"Relative to the bunny's coordinate axes, is the car facing backward?",yes,Object,Orientation
+q_122,1,main,images/q_122_object_orientation_Car_fb_b_rot180_cam120.jpg,"Relative to Pinocchio's coordinate axes, is the car facing forward?",no,Object,Orientation
+q_131,1,main,images/q_131_object_orientation_Piggy_bank_lr_a_rot90_cam210.jpg,"Relative to Pinocchio's coordinate axes, is the piggy bank facing left?",yes,Object,Orientation
+q_133,1,main,images/q_133_object_orientation_Penguin_down_rot90_cam240.jpg,"Relative to the bunny's coordinate axes, is the penguin facing left?",yes,Object,Orientation
+q_144,1,main,images/q_144_object_orientation_Penguin_fb_a_rot0_cam330.jpg,"Relative to the teddy bear's coordinate axes, is the penguin facing backward?",no,Object,Orientation
+q_152,1,main,images/q_152_body_position_Toy_Train_lr_a_rot90_cam060.jpg,"Relative to Pinocchio's body coordinate axes, is the toy train to the left of Pinocchio?",no,Body,Position
+q_160,1,main,images/q_160_body_position_Elephant_teddy_under_target_on_rot270_cam150.jpg,"Relative to the bunny's body coordinate axes, is the elephant above the bunny?",yes,Body,Position
+q_162,1,main,images/q_162_body_position_Piggy_bank_lr_b_rot90_cam150.jpg,"Relative to the teddy bear's body coordinate axes, is the piggy bank to the left of the teddy bear?",yes,Body,Position
+q_166,1,main,images/q_166_body_position_Dog_fb_b_rot0_cam210.jpg,"Relative to the bunny's body coordinate axes, is the dog behind the bunny?",yes,Body,Position
+q_167,1,main,images/q_167_body_position_Airplane_down_rot90_cam210.jpg,"Relative to Pinocchio's body coordinate axes, is the airplane above Pinocchio?",no,Body,Position
+q_179,1,main,images/q_179_body_position_Toy_Duck_lr_b_rot270_cam330.jpg,"Relative to Pinocchio's body coordinate axes, is the toy duck to the right of Pinocchio?",no,Body,Position
+q_182,1,main,images/q_182_body_orientation_Airplane_up_rot90_cam000.jpg,"Relative to Pinocchio's body coordinate axes, is the airplane facing right?",no,Body,Orientation
+q_184,1,main,images/q_184_body_orientation_Penguin_teddy_under_target_on_rot270_cam030.jpg,"Relative to the bunny's body coordinate axes, is the penguin facing right?",yes,Body,Orientation
+q_186,1,main,images/q_186_body_orientation_Penguin_fb_b_rot0_cam030.jpg,"Relative to the teddy bear's body coordinate axes, is the penguin facing backward?",no,Body,Orientation
+q_187,1,main,images/q_187_body_orientation_Elephant_lr_b_rot90_cam060.jpg,"Relative to the bunny's body coordinate axes, is the elephant facing left?",yes,Body,Orientation
+q_208,1,main,images/q_208_body_orientation_Car_fb_a_rot0_cam270.jpg,"Relative to the bunny's body coordinate axes, is the car facing forward?",yes,Body,Orientation
+q_209,1,main,images/q_209_body_orientation_Robot_fb_a_rot180_cam270.jpg,"Relative to Pinocchio's body coordinate axes, is the robot facing forward?",no,Body,Orientation
+q_217,1,main,images/q_217_head_position_Piggy_bank_teddy_on_target_under_rot270_cam000.jpg,"Relative to the bunny's head coordinate axes, is the piggy bank above the bunny?",no,Head,Position
+q_221,1,main,images/q_221_head_position_Dog_lr_a_rot270_cam030.jpg,"Relative to Pinocchio's head coordinate axes, is the dog behind Pinocchio?",no,Head,Position
+q_235,1,main,images/q_235_head_position_Toy_Duck_down_rot90_cam180.jpg,"Relative to the bunny's head coordinate axes, is the toy duck below the bunny?",yes,Head,Position
+q_240,1,main,images/q_240_head_position_Robot_fb_b_rot0_cam210.jpg,"Relative to the teddy bear's head coordinate axes, is the robot to the right of the teddy bear?",no,Head,Position
+q_243,1,main,images/q_243_head_position_Car_fb_a_rot0_cam240.jpg,"Relative to the teddy bear's head coordinate axes, is the car to the right of the teddy bear?",yes,Head,Position
+q_248,1,main,images/q_248_head_position_Toy_Duck_lr_a_rot90_cam300.jpg,"Relative to Pinocchio's head coordinate axes, is the toy duck in front of Pinocchio?",yes,Head,Position
+q_255,1,main,images/q_255_head_orientation_Toy_Train_fb_b_rot0_cam000.jpg,"Relative to the teddy bear's head coordinate axes, is the toy train facing left?",no,Head,Orientation
+q_263,1,main,images/q_263_head_orientation_Robot_up_rot90_cam090.jpg,"Relative to Pinocchio's head coordinate axes, is the robot facing forward?",yes,Head,Orientation
+q_264,1,main,images/q_264_head_orientation_Toy_Duck_fb_a_rot180_cam090.jpg,"Relative to the teddy bear's head coordinate axes, is the toy duck facing left?",no,Head,Orientation
+q_281,1,main,images/q_281_head_orientation_Cat_lr_b_rot90_cam270.jpg,"Relative to Pinocchio's head coordinate axes, is the cat facing forward?",yes,Head,Orientation
+q_284,1,main,images/q_284_head_orientation_Toy_Train_teddy_under_target_on_rot270_cam300.jpg,"Relative to Pinocchio's head coordinate axes, is the toy train facing backward?",no,Head,Orientation
+q_287,1,main,images/q_287_head_orientation_Car_lr_b_rot90_cam330.jpg,"Relative to Pinocchio's head coordinate axes, is the car facing backward?",yes,Head,Orientation
+q_002,2,main,images/q_002_viewer_position_Car_fb_b_rot180_cam000.jpg,"Relative to the viewer, is the car in front of Pinocchio?",no,Viewer,Position
+q_013,2,main,images/q_013_viewer_position_Dog_lr_a_rot270_cam120.jpg,"Relative to the viewer, is the dog behind the bunny?",yes,Viewer,Position
+q_018,2,main,images/q_018_viewer_position_Toy_Train_fb_a_rot180_cam150.jpg,"Relative to the viewer, is the toy train to the right of the teddy bear?",no,Viewer,Position
+q_028,2,main,images/q_028_viewer_position_Cat_teddy_under_target_on_rot270_cam270.jpg,"Relative to the viewer, is the cat to the right of the bunny?",yes,Viewer,Position
+q_033,2,main,images/q_033_viewer_position_Robot_fb_b_rot0_cam300.jpg,"Relative to the viewer, is the robot to the left of the teddy bear?",yes,Viewer,Position
+q_036,2,main,images/q_036_viewer_position_Piggy_bank_up_rot90_cam330.jpg,"Relative to the viewer, is the piggy bank below the teddy bear?",no,Viewer,Position
+q_051,2,main,images/q_051_viewer_orientation_Airplane_teddy_under_target_on_rot90_cam120.jpg,"Relative to the viewer, is the airplane facing right?",no,Viewer,Orientation
+q_060,2,main,images/q_060_viewer_orientation_Toy_Train_lr_b_rot90_cam210.jpg,"Relative to the viewer, is the toy train facing right?",no,Viewer,Orientation
+q_063,2,main,images/q_063_viewer_orientation_Piggy_bank_fb_a_rot0_cam240.jpg,"Relative to the viewer, is the piggy bank facing right?",yes,Viewer,Orientation
+q_064,2,main,images/q_064_viewer_orientation_Robot_lr_b_rot270_cam270.jpg,"Relative to the viewer, is the robot facing forward?",yes,Viewer,Orientation
+q_068,2,main,images/q_068_viewer_orientation_Toy_Duck_fb_a_rot180_cam300.jpg,"Relative to the viewer, is the toy duck facing backward?",yes,Viewer,Orientation
+q_071,2,main,images/q_071_viewer_orientation_Car_up_rot90_cam330.jpg,"Relative to the viewer, is the car facing left?",no,Viewer,Orientation
+q_079,2,main,images/q_079_object_position_Cat_lr_b_rot270_cam060.jpg,"Relative to the bunny's coordinate axes, is the cat to the right of the bunny?",no,Object,Position
+q_082,2,main,images/q_082_object_position_Piggy_bank_up_rot90_cam090.jpg,"Relative to the bunny's coordinate axes, is the piggy bank below the bunny?",no,Object,Position
+q_084,2,main,images/q_084_object_position_Penguin_lr_a_rot270_cam090.jpg,"Relative to the teddy bear's coordinate axes, is the penguin to the left of the teddy bear?",no,Object,Position
+q_091,2,main,images/q_091_object_position_Cat_teddy_on_target_under_rot270_cam180.jpg,"Relative to the bunny's coordinate axes, is the cat below the bunny?",yes,Object,Position
+q_094,2,main,images/q_094_object_position_Penguin_fb_b_rot0_cam210.jpg,"Relative to the bunny's coordinate axes, is the penguin behind the bunny?",yes,Object,Position
+q_095,2,main,images/q_095_object_position_Car_lr_a_rot90_cam210.jpg,"Relative to Pinocchio's coordinate axes, is the car to the right of Pinocchio?",yes,Object,Position
+q_109,2,main,images/q_109_object_orientation_Dog_teddy_on_target_under_rot90_cam000.jpg,"Relative to the bunny's coordinate axes, is the dog facing right?",no,Object,Orientation
+q_111,2,main,images/q_111_object_orientation_Piggy_bank_lr_a_rot270_cam000.jpg,"Relative to the teddy bear's coordinate axes, is the piggy bank facing right?",yes,Object,Orientation
+q_112,2,main,images/q_112_object_orientation_Cat_fb_b_rot0_cam030.jpg,"Relative to the bunny's coordinate axes, is the cat facing forward?",yes,Object,Orientation
+q_116,2,main,images/q_116_object_orientation_Toy_Train_fb_a_rot0_cam060.jpg,"Relative to Pinocchio's coordinate axes, is the toy train facing forward?",yes,Object,Orientation
+q_134,2,main,images/q_134_object_orientation_Robot_down_rot270_cam240.jpg,"Relative to Pinocchio's coordinate axes, is the robot facing left?",no,Object,Orientation
+q_137,2,main,images/q_137_object_orientation_Penguin_lr_b_rot90_cam270.jpg,"Relative to Pinocchio's coordinate axes, is the penguin facing right?",no,Object,Orientation
+q_149,2,main,images/q_149_body_position_Car_teddy_on_target_under_rot270_cam030.jpg,"Relative to Pinocchio's body coordinate axes, is the car below Pinocchio?",yes,Body,Position
+q_150,2,main,images/q_150_body_position_Toy_Train_fb_a_rot0_cam030.jpg,"Relative to the teddy bear's body coordinate axes, is the toy train behind the teddy bear?",no,Body,Position
+q_155,2,main,images/q_155_body_position_Dog_teddy_under_target_on_rot270_cam090.jpg,"Relative to Pinocchio's body coordinate axes, is the dog above Pinocchio?",yes,Body,Position
+q_165,2,main,images/q_165_body_position_Robot_lr_a_rot270_cam180.jpg,"Relative to the teddy bear's body coordinate axes, is the robot to the left of the teddy bear?",no,Body,Position
+q_174,2,main,images/q_174_body_position_Toy_Duck_lr_b_rot90_cam270.jpg,"Relative to the teddy bear's body coordinate axes, is the toy duck to the left of the teddy bear?",yes,Body,Position
+q_180,2,main,images/q_180_body_position_Elephant_fb_a_rot180_cam330.jpg,"Relative to the teddy bear's body coordinate axes, is the elephant behind the teddy bear?",no,Body,Position
+q_192,2,main,images/q_192_body_orientation_Penguin_down_rot90_cam090.jpg,"Relative to the teddy bear's body coordinate axes, is the penguin facing left?",yes,Body,Orientation
+q_195,2,main,images/q_195_body_orientation_Airplane_fb_b_rot180_cam120.jpg,"Relative to the teddy bear's body coordinate axes, is the airplane facing forward?",no,Body,Orientation
+q_197,2,main,images/q_197_body_orientation_Dog_teddy_on_target_under_rot270_cam150.jpg,"Relative to Pinocchio's body coordinate axes, is the dog facing right?",yes,Body,Orientation
+q_198,2,main,images/q_198_body_orientation_Car_fb_b_rot0_cam150.jpg,"Relative to the teddy bear's body coordinate axes, is the car facing forward?",yes,Body,Orientation
+q_206,2,main,images/q_206_body_orientation_Piggy_bank_lr_a_rot270_cam240.jpg,"Relative to Pinocchio's body coordinate axes, is the piggy bank facing left?",no,Body,Orientation
+q_211,2,main,images/q_211_body_orientation_Elephant_lr_b_rot90_cam300.jpg,"Relative to the bunny's body coordinate axes, is the elephant facing right?",no,Body,Orientation
+q_218,2,main,images/q_218_head_position_Dog_fb_b_rot180_cam000.jpg,"Relative to Pinocchio's head coordinate axes, is the dog to the left of Pinocchio?",yes,Head,Position
+q_220,2,main,images/q_220_head_position_Elephant_lr_b_rot90_cam030.jpg,"Relative to the bunny's head coordinate axes, is the elephant in front of the bunny?",no,Head,Position
+q_223,2,main,images/q_223_head_position_Piggy_bank_teddy_on_target_under_rot270_cam060.jpg,"Relative to the bunny's head coordinate axes, is the piggy bank above the bunny?",no,Head,Position
+q_225,2,main,images/q_225_head_position_Toy_Train_down_rot90_cam060.jpg,"Relative to the teddy bear's head coordinate axes, is the toy train below the teddy bear?",yes,Head,Position
+q_236,2,main,images/q_236_head_position_Robot_fb_b_rot180_cam180.jpg,"Relative to Pinocchio's head coordinate axes, is the robot to the left of Pinocchio?",yes,Head,Position
+q_247,2,main,images/q_247_head_position_Toy_Duck_lr_a_rot90_cam300.jpg,"Relative to the bunny's head coordinate axes, is the toy duck behind the bunny?",no,Head,Position
+q_266,2,main,images/q_266_head_orientation_Penguin_fb_a_rot0_cam120.jpg,"Relative to Pinocchio's head coordinate axes, is the penguin facing right?",yes,Head,Orientation
+q_268,2,main,images/q_268_head_orientation_Airplane_fb_a_rot180_cam150.jpg,"Relative to the bunny's head coordinate axes, is the airplane facing left?",no,Head,Orientation
+q_272,2,main,images/q_272_head_orientation_Toy_Duck_up_rot270_cam180.jpg,"Relative to Pinocchio's head coordinate axes, is the toy duck facing backward?",no,Head,Orientation
+q_275,2,main,images/q_275_head_orientation_Airplane_down_rot90_cam210.jpg,"Relative to Pinocchio's head coordinate axes, is the airplane facing forward?",yes,Head,Orientation
+q_277,2,main,images/q_277_head_orientation_Cat_lr_a_rot270_cam240.jpg,"Relative to the bunny's head coordinate axes, is the cat facing forward?",yes,Head,Orientation
+q_286,2,main,images/q_286_head_orientation_Dog_lr_b_rot270_cam330.jpg,"Relative to the bunny's head coordinate axes, is the dog facing forward?",no,Head,Orientation
+q_006,3,main,images/q_006_viewer_position_Toy_Duck_teddy_on_target_under_rot90_cam030.jpg,"Relative to the viewer, is the toy duck above the teddy bear?",no,Viewer,Position
+q_010,3,main,images/q_010_viewer_position_Car_teddy_under_target_on_rot270_cam090.jpg,"Relative to the viewer, is the car to the left of the bunny?",yes,Viewer,Position
+q_011,3,main,images/q_011_viewer_position_Cat_lr_a_rot270_cam090.jpg,"Relative to the viewer, is the cat in front of Pinocchio?",no,Viewer,Position
+q_016,3,main,images/q_016_viewer_position_Airplane_fb_a_rot180_cam150.jpg,"Relative to the viewer, is the airplane behind the bunny?",yes,Viewer,Position
+q_025,3,main,images/q_025_viewer_position_Toy_Duck_fb_b_rot0_cam240.jpg,"Relative to the viewer, is the toy duck to the right of the bunny?",no,Viewer,Position
+q_029,3,main,images/q_029_viewer_position_Dog_lr_b_rot90_cam270.jpg,"Relative to the viewer, is the dog behind Pinocchio?",yes,Viewer,Position
+q_039,3,main,images/q_039_viewer_orientation_Dog_up_rot270_cam000.jpg,"Relative to the viewer, is the dog facing left?",yes,Viewer,Orientation
+q_050,3,main,images/q_050_viewer_orientation_Penguin_teddy_on_target_under_rot90_cam120.jpg,"Relative to the viewer, is the penguin facing right?",no,Viewer,Orientation
+q_053,3,main,images/q_053_viewer_orientation_Elephant_lr_a_rot90_cam150.jpg,"Relative to the viewer, is the elephant facing forward?",yes,Viewer,Orientation
+q_058,3,main,images/q_058_viewer_orientation_Elephant_lr_a_rot90_cam210.jpg,"Relative to the viewer, is the elephant facing right?",no,Viewer,Orientation
+q_062,3,main,images/q_062_viewer_orientation_Airplane_lr_b_rot90_cam240.jpg,"Relative to the viewer, is the airplane facing backward?",yes,Viewer,Orientation
+q_072,3,main,images/q_072_viewer_orientation_Penguin_lr_b_rot90_cam330.jpg,"Relative to the viewer, is the penguin facing left?",no,Viewer,Orientation
+q_073,3,main,images/q_073_object_position_Car_fb_a_rot180_cam000.jpg,"Relative to the bunny's coordinate axes, is the car in front of the bunny?",yes,Object,Position
+q_078,3,main,images/q_078_object_position_Toy_Duck_fb_b_rot0_cam030.jpg,"Relative to the teddy bear's coordinate axes, is the toy duck in front of the teddy bear?",no,Object,Position
+q_080,3,main,images/q_080_object_position_Toy_Train_lr_b_rot90_cam060.jpg,"Relative to Pinocchio's coordinate axes, is the toy train to the left of Pinocchio?",yes,Object,Position
+q_088,3,main,images/q_088_object_position_Piggy_bank_teddy_under_target_on_rot270_cam150.jpg,"Relative to the bunny's coordinate axes, is the piggy bank below the bunny?",no,Object,Position
+q_092,3,main,images/q_092_object_position_Elephant_fb_a_rot0_cam180.jpg,"Relative to Pinocchio's coordinate axes, is the elephant behind Pinocchio?",no,Object,Position
+q_108,3,main,images/q_108_object_position_Penguin_teddy_on_target_under_rot90_cam330.jpg,"Relative to the teddy bear's coordinate axes, is the penguin below the teddy bear?",yes,Object,Position
+q_123,3,main,images/q_123_object_orientation_Penguin_lr_a_rot90_cam120.jpg,"Relative to the teddy bear's coordinate axes, is the penguin facing right?",no,Object,Orientation
+q_127,3,main,images/q_127_object_orientation_Cat_up_rot90_cam180.jpg,"Relative to the bunny's coordinate axes, is the cat facing left?",yes,Object,Orientation
+q_129,3,main,images/q_129_object_orientation_Robot_fb_b_rot180_cam180.jpg,"Relative to the teddy bear's coordinate axes, is the robot facing backward?",yes,Object,Orientation
+q_130,3,main,images/q_130_object_orientation_Toy_Duck_fb_a_rot180_cam210.jpg,"Relative to the bunny's coordinate axes, is the toy duck facing forward?",no,Object,Orientation
+q_140,3,main,images/q_140_object_orientation_Car_up_rot270_cam300.jpg,"Relative to Pinocchio's coordinate axes, is the car facing left?",no,Object,Orientation
+q_142,3,main,images/q_142_object_orientation_Toy_Train_fb_a_rot180_cam330.jpg,"Relative to the bunny's coordinate axes, is the toy train facing backward?",yes,Object,Orientation
+q_146,3,main,images/q_146_body_position_Toy_Train_down_rot90_cam000.jpg,"Relative to Pinocchio's body coordinate axes, is the toy train above Pinocchio?",no,Body,Position
+q_151,3,main,images/q_151_body_position_Piggy_bank_fb_a_rot0_cam060.jpg,"Relative to the bunny's body coordinate axes, is the piggy bank behind the bunny?",no,Body,Position
+q_168,3,main,images/q_168_body_position_Robot_lr_a_rot270_cam210.jpg,"Relative to the teddy bear's body coordinate axes, is the robot to the right of the teddy bear?",yes,Body,Position
+q_171,3,main,images/q_171_body_position_Robot_fb_b_rot0_cam240.jpg,"Relative to the teddy bear's body coordinate axes, is the robot in front of the teddy bear?",no,Body,Position
+q_172,3,main,images/q_172_body_position_Airplane_up_rot270_cam270.jpg,"Relative to the bunny's body coordinate axes, is the airplane above the bunny?",yes,Body,Position
+q_176,3,main,images/q_176_body_position_Car_lr_a_rot270_cam300.jpg,"Relative to Pinocchio's body coordinate axes, is the car to the right of Pinocchio?",yes,Body,Position
+q_183,3,main,images/q_183_body_orientation_Toy_Train_teddy_on_target_under_rot270_cam000.jpg,"Relative to the teddy bear's body coordinate axes, is the toy train facing left?",no,Body,Orientation
+q_188,3,main,images/q_188_body_orientation_Dog_lr_b_rot270_cam060.jpg,"Relative to Pinocchio's body coordinate axes, is the dog facing right?",yes,Body,Orientation
+q_189,3,main,images/q_189_body_orientation_Dog_lr_b_rot270_cam060.jpg,"Relative to the teddy bear's body coordinate axes, is the dog facing right?",yes,Body,Orientation
+q_191,3,main,images/q_191_body_orientation_Dog_fb_b_rot180_cam090.jpg,"Relative to Pinocchio's body coordinate axes, is the dog facing forward?",no,Body,Orientation
+q_199,3,main,images/q_199_body_orientation_Cat_up_rot90_cam180.jpg,"Relative to the bunny's body coordinate axes, is the cat facing left?",yes,Body,Orientation
+q_204,3,main,images/q_204_body_orientation_Airplane_lr_b_rot270_cam210.jpg,"Relative to the teddy bear's body coordinate axes, is the airplane facing left?",no,Body,Orientation
+q_228,3,main,images/q_228_head_position_Car_lr_b_rot90_cam090.jpg,"Relative to the teddy bear's head coordinate axes, is the car behind the teddy bear?",no,Head,Position
+q_230,3,main,images/q_230_head_position_Robot_lr_b_rot270_cam120.jpg,"Relative to Pinocchio's head coordinate axes, is the robot in front of Pinocchio?",yes,Head,Position
+q_234,3,main,images/q_234_head_position_Penguin_teddy_under_target_on_rot270_cam150.jpg,"Relative to the teddy bear's head coordinate axes, is the penguin above the teddy bear?",yes,Head,Position
+q_242,3,main,images/q_242_head_position_Elephant_up_rot90_cam240.jpg,"Relative to Pinocchio's head coordinate axes, is the elephant below Pinocchio?",no,Head,Position
+q_244,3,main,images/q_244_head_position_Cat_fb_b_rot180_cam270.jpg,"Relative to the bunny's head coordinate axes, is the cat to the left of the bunny?",no,Head,Position
+q_251,3,main,images/q_251_head_position_Piggy_bank_fb_a_rot0_cam330.jpg,"Relative to Pinocchio's head coordinate axes, is the piggy bank to the right of Pinocchio?",yes,Head,Position
+q_256,3,main,images/q_256_head_orientation_Toy_Duck_lr_a_rot90_cam030.jpg,"Relative to the bunny's head coordinate axes, is the toy duck facing forward?",no,Head,Orientation
+q_257,3,main,images/q_257_head_orientation_Penguin_down_rot90_cam030.jpg,"Relative to Pinocchio's head coordinate axes, is the penguin facing backward?",yes,Head,Orientation
+q_265,3,main,images/q_265_head_orientation_Toy_Train_fb_b_rot0_cam120.jpg,"Relative to the bunny's head coordinate axes, is the toy train facing left?",no,Head,Orientation
+q_282,3,main,images/q_282_head_orientation_Robot_fb_b_rot0_cam270.jpg,"Relative to the teddy bear's head coordinate axes, is the robot facing right?",yes,Head,Orientation
+q_283,3,main,images/q_283_head_orientation_Penguin_down_rot270_cam300.jpg,"Relative to the bunny's head coordinate axes, is the penguin facing forward?",no,Head,Orientation
+q_285,3,main,images/q_285_head_orientation_Toy_Duck_fb_b_rot180_cam300.jpg,"Relative to the teddy bear's head coordinate axes, is the toy duck facing right?",yes,Head,Orientation
+q_001,4,main,images/q_001_viewer_position_Elephant_up_rot90_cam000.jpg,"Relative to the viewer, is the elephant above the bunny?",yes,Viewer,Position
+q_003,4,main,images/q_003_viewer_position_Penguin_lr_a_rot270_cam000.jpg,"Relative to the viewer, is the penguin to the left of the teddy bear?",yes,Viewer,Position
+q_005,4,main,images/q_005_viewer_position_Toy_Train_lr_b_rot270_cam030.jpg,"Relative to the viewer, is the toy train behind Pinocchio?",no,Viewer,Position
+q_012,4,main,images/q_012_viewer_position_Airplane_teddy_on_target_under_rot90_cam090.jpg,"Relative to the viewer, is the airplane to the left of the teddy bear?",no,Viewer,Position
+q_027,4,main,images/q_027_viewer_position_Dog_fb_a_rot0_cam240.jpg,"Relative to the viewer, is the dog in front of the teddy bear?",no,Viewer,Position
+q_034,4,main,images/q_034_viewer_position_Toy_Duck_fb_b_rot180_cam330.jpg,"Relative to the viewer, is the toy duck behind the bunny?",yes,Viewer,Position
+q_043,4,main,images/q_043_viewer_orientation_Toy_Train_fb_b_rot0_cam060.jpg,"Relative to the viewer, is the toy train facing backward?",no,Viewer,Orientation
+q_047,4,main,images/q_047_viewer_orientation_Penguin_lr_b_rot270_cam090.jpg,"Relative to the viewer, is the penguin facing forward?",no,Viewer,Orientation
+q_054,4,main,images/q_054_viewer_orientation_Elephant_fb_b_rot180_cam150.jpg,"Relative to the viewer, is the elephant facing right?",yes,Viewer,Orientation
+q_055,4,main,images/q_055_viewer_orientation_Robot_teddy_under_target_on_rot270_cam180.jpg,"Relative to the viewer, is the robot facing right?",yes,Viewer,Orientation
+q_057,4,main,images/q_057_viewer_orientation_Toy_Train_down_rot90_cam180.jpg,"Relative to the viewer, is the toy train facing right?",no,Viewer,Orientation
+q_065,4,main,images/q_065_viewer_orientation_Cat_lr_a_rot90_cam270.jpg,"Relative to the viewer, is the cat facing backward?",yes,Viewer,Orientation
+q_076,4,main,images/q_076_object_position_Airplane_lr_b_rot270_cam030.jpg,"Relative to the bunny's coordinate axes, is the airplane to the left of the bunny?",yes,Object,Position
+q_077,4,main,images/q_077_object_position_Cat_teddy_on_target_under_rot270_cam030.jpg,"Relative to Pinocchio's coordinate axes, is the cat below Pinocchio?",yes,Object,Position
+q_101,4,main,images/q_101_object_position_Elephant_fb_b_rot180_cam270.jpg,"Relative to Pinocchio's coordinate axes, is the elephant in front of Pinocchio?",no,Object,Position
+q_103,4,main,images/q_103_object_position_Car_lr_a_rot270_cam300.jpg,"Relative to the bunny's coordinate axes, is the car to the left of the bunny?",no,Object,Position
+q_104,4,main,images/q_104_object_position_Airplane_lr_b_rot90_cam300.jpg,"Relative to Pinocchio's coordinate axes, is the airplane to the right of Pinocchio?",no,Object,Position
+q_107,4,main,images/q_107_object_position_Robot_up_rot90_cam330.jpg,"Relative to Pinocchio's coordinate axes, is the robot above Pinocchio?",yes,Object,Position
+q_120,4,main,images/q_120_object_orientation_Toy_Duck_lr_b_rot90_cam090.jpg,"Relative to the teddy bear's coordinate axes, is the toy duck facing left?",yes,Object,Orientation
+q_124,4,main,images/q_124_object_orientation_Toy_Train_lr_b_rot270_cam150.jpg,"Relative to the bunny's coordinate axes, is the toy train facing left?",no,Object,Orientation
+q_132,4,main,images/q_132_object_orientation_Robot_lr_a_rot270_cam210.jpg,"Relative to the teddy bear's coordinate axes, is the robot facing left?",no,Object,Orientation
+q_138,4,main,images/q_138_object_orientation_Dog_teddy_on_target_under_rot270_cam270.jpg,"Relative to the teddy bear's coordinate axes, is the dog facing right?",yes,Object,Orientation
+q_139,4,main,images/q_139_object_orientation_Cat_teddy_on_target_under_rot270_cam300.jpg,"Relative to the bunny's coordinate axes, is the cat facing right?",yes,Object,Orientation
+q_141,4,main,images/q_141_object_orientation_Piggy_bank_lr_b_rot90_cam300.jpg,"Relative to the teddy bear's coordinate axes, is the piggy bank facing right?",no,Object,Orientation
+q_145,4,main,images/q_145_body_position_Toy_Train_down_rot270_cam000.jpg,"Relative to the bunny's body coordinate axes, is the toy train below the bunny?",yes,Body,Position
+q_153,4,main,images/q_153_body_position_Car_fb_a_rot0_cam060.jpg,"Relative to the teddy bear's body coordinate axes, is the car in front of the teddy bear?",yes,Body,Position
+q_157,4,main,images/q_157_body_position_Airplane_lr_a_rot90_cam120.jpg,"Relative to the bunny's body coordinate axes, is the airplane to the left of the bunny?",no,Body,Position
+q_161,4,main,images/q_161_body_position_Piggy_bank_fb_b_rot0_cam150.jpg,"Relative to Pinocchio's body coordinate axes, is the piggy bank in front of Pinocchio?",no,Body,Position
+q_164,4,main,images/q_164_body_position_Robot_fb_a_rot180_cam180.jpg,"Relative to Pinocchio's body coordinate axes, is the robot in front of Pinocchio?",yes,Body,Position
+q_169,4,main,images/q_169_body_position_Dog_teddy_under_target_on_rot90_cam240.jpg,"Relative to the bunny's body coordinate axes, is the dog below the bunny?",no,Body,Position
+q_194,4,main,images/q_194_body_orientation_Robot_lr_a_rot90_cam120.jpg,"Relative to Pinocchio's body coordinate axes, is the robot facing right?",no,Body,Orientation
+q_203,4,main,images/q_203_body_orientation_Cat_lr_b_rot90_cam210.jpg,"Relative to Pinocchio's body coordinate axes, is the cat facing left?",yes,Body,Orientation
+q_205,4,main,images/q_205_body_orientation_Toy_Train_lr_a_rot270_cam240.jpg,"Relative to the bunny's body coordinate axes, is the toy train facing right?",yes,Body,Orientation
+q_210,4,main,images/q_210_body_orientation_Toy_Duck_fb_a_rot180_cam270.jpg,"Relative to the teddy bear's body coordinate axes, is the toy duck facing backward?",yes,Body,Orientation
+q_215,4,main,images/q_215_body_orientation_Car_teddy_under_target_on_rot270_cam330.jpg,"Relative to Pinocchio's body coordinate axes, is the car facing left?",no,Body,Orientation
+q_216,4,main,images/q_216_body_orientation_Elephant_up_rot90_cam330.jpg,"Relative to the teddy bear's body coordinate axes, is the elephant facing right?",no,Body,Orientation
+q_222,4,main,images/q_222_head_position_Cat_lr_b_rot270_cam030.jpg,"Relative to the teddy bear's head coordinate axes, is the cat in front of the teddy bear?",no,Head,Position
+q_224,4,main,images/q_224_head_position_Toy_Duck_fb_a_rot180_cam060.jpg,"Relative to Pinocchio's head coordinate axes, is the toy duck to the left of Pinocchio?",yes,Head,Position
+q_226,4,main,images/q_226_head_position_Penguin_teddy_under_target_on_rot270_cam090.jpg,"Relative to the bunny's head coordinate axes, is the penguin below the bunny?",no,Head,Position
+q_229,4,main,images/q_229_head_position_Dog_fb_b_rot0_cam120.jpg,"Relative to the bunny's head coordinate axes, is the dog to the right of the bunny?",yes,Head,Position
+q_231,4,main,images/q_231_head_position_Car_teddy_on_target_under_rot270_cam120.jpg,"Relative to the teddy bear's head coordinate axes, is the car above the teddy bear?",no,Head,Position
+q_238,4,main,images/q_238_head_position_Elephant_fb_a_rot0_cam210.jpg,"Relative to the bunny's head coordinate axes, is the elephant to the right of the bunny?",yes,Head,Position
+q_254,4,main,images/q_254_head_orientation_Toy_Train_fb_b_rot180_cam000.jpg,"Relative to Pinocchio's head coordinate axes, is the toy train facing left?",yes,Head,Orientation
+q_261,4,main,images/q_261_head_orientation_Car_fb_a_rot0_cam060.jpg,"Relative to the teddy bear's head coordinate axes, is the car facing right?",no,Head,Orientation
+q_269,4,main,images/q_269_head_orientation_Piggy_bank_up_rot90_cam150.jpg,"Relative to Pinocchio's head coordinate axes, is the piggy bank facing backward?",no,Head,Orientation
+q_273,4,main,images/q_273_head_orientation_Airplane_down_rot90_cam180.jpg,"Relative to the teddy bear's head coordinate axes, is the airplane facing backward?",yes,Head,Orientation
+q_274,4,main,images/q_274_head_orientation_Dog_lr_b_rot270_cam210.jpg,"Relative to the bunny's head coordinate axes, is the dog facing backward?",yes,Head,Orientation
+q_278,4,main,images/q_278_head_orientation_Piggy_bank_lr_a_rot90_cam240.jpg,"Relative to Pinocchio's head coordinate axes, is the piggy bank facing forward?",no,Head,Orientation
+q_004,5,main,images/q_004_viewer_position_Robot_fb_a_rot0_cam030.jpg,"Relative to the viewer, is the robot behind the bunny?",no,Viewer,Position
+q_007,5,main,images/q_007_viewer_position_Car_fb_b_rot0_cam060.jpg,"Relative to the viewer, is the car to the right of the bunny?",yes,Viewer,Position
+q_014,5,main,images/q_014_viewer_position_Car_teddy_on_target_under_rot270_cam120.jpg,"Relative to the viewer, is the car above Pinocchio?",yes,Viewer,Position
+q_022,5,main,images/q_022_viewer_position_Piggy_bank_lr_b_rot270_cam210.jpg,"Relative to the viewer, is the piggy bank to the right of the bunny?",no,Viewer,Position
+q_024,5,main,images/q_024_viewer_position_Penguin_lr_a_rot90_cam210.jpg,"Relative to the viewer, is the penguin in front of the teddy bear?",yes,Viewer,Position
+q_026,5,main,images/q_026_viewer_position_Cat_teddy_on_target_under_rot90_cam240.jpg,"Relative to the viewer, is the cat below Pinocchio?",no,Viewer,Position
+q_037,5,main,images/q_037_viewer_orientation_Robot_fb_a_rot0_cam000.jpg,"Relative to the viewer, is the robot facing backward?",no,Viewer,Orientation
+q_044,5,main,images/q_044_viewer_orientation_Piggy_bank_fb_a_rot0_cam060.jpg,"Relative to the viewer, is the piggy bank facing left?",yes,Viewer,Orientation
+q_045,5,main,images/q_045_viewer_orientation_Elephant_down_rot90_cam060.jpg,"Relative to the viewer, is the elephant facing left?",no,Viewer,Orientation
+q_052,5,main,images/q_052_viewer_orientation_Dog_lr_a_rot270_cam150.jpg,"Relative to the viewer, is the dog facing right?",yes,Viewer,Orientation
+q_059,5,main,images/q_059_viewer_orientation_Airplane_up_rot270_cam210.jpg,"Relative to the viewer, is the airplane facing right?",yes,Viewer,Orientation
+q_066,5,main,images/q_066_viewer_orientation_Toy_Train_lr_a_rot270_cam270.jpg,"Relative to the viewer, is the toy train facing backward?",no,Viewer,Orientation
+q_074,5,main,images/q_074_object_position_Toy_Duck_lr_b_rot270_cam000.jpg,"Relative to Pinocchio's coordinate axes, is the toy duck to the left of Pinocchio?",yes,Object,Position
+q_086,5,main,images/q_086_object_position_Robot_teddy_on_target_under_rot90_cam120.jpg,"Relative to Pinocchio's coordinate axes, is the robot above Pinocchio?",no,Object,Position
+q_089,5,main,images/q_089_object_position_Dog_down_rot270_cam150.jpg,"Relative to Pinocchio's coordinate axes, is the dog above Pinocchio?",no,Object,Position
+q_093,5,main,images/q_093_object_position_Car_lr_a_rot90_cam180.jpg,"Relative to the teddy bear's coordinate axes, is the car to the left of the teddy bear?",no,Object,Position
+q_096,5,main,images/q_096_object_position_Piggy_bank_fb_b_rot180_cam210.jpg,"Relative to the teddy bear's coordinate axes, is the piggy bank behind the teddy bear?",yes,Object,Position
+q_100,5,main,images/q_100_object_position_Dog_fb_a_rot0_cam270.jpg,"Relative to the bunny's coordinate axes, is the dog in front of the bunny?",yes,Object,Position
+q_113,5,main,images/q_113_object_orientation_Airplane_lr_a_rot270_cam030.jpg,"Relative to Pinocchio's coordinate axes, is the airplane facing right?",yes,Object,Orientation
+q_114,5,main,images/q_114_object_orientation_Elephant_down_rot90_cam030.jpg,"Relative to the teddy bear's coordinate axes, is the elephant facing left?",yes,Object,Orientation
+q_119,5,main,images/q_119_object_orientation_Elephant_lr_a_rot90_cam090.jpg,"Relative to Pinocchio's coordinate axes, is the elephant facing left?",yes,Object,Orientation
+q_121,5,main,images/q_121_object_orientation_Toy_Duck_lr_b_rot270_cam120.jpg,"Relative to the bunny's coordinate axes, is the toy duck facing left?",no,Object,Orientation
+q_128,5,main,images/q_128_object_orientation_Piggy_bank_fb_b_rot0_cam180.jpg,"Relative to Pinocchio's coordinate axes, is the piggy bank facing backward?",no,Object,Orientation
+q_143,5,main,images/q_143_object_orientation_Airplane_up_rot90_cam330.jpg,"Relative to Pinocchio's coordinate axes, is the airplane facing right?",no,Object,Orientation
+q_154,5,main,images/q_154_body_position_Car_fb_b_rot180_cam090.jpg,"Relative to the bunny's body coordinate axes, is the car in front of the bunny?",no,Body,Position
+q_156,5,main,images/q_156_body_position_Cat_fb_b_rot180_cam090.jpg,"Relative to the teddy bear's body coordinate axes, is the cat behind the teddy bear?",yes,Body,Position
+q_163,5,main,images/q_163_body_position_Penguin_lr_a_rot90_cam180.jpg,"Relative to the bunny's body coordinate axes, is the penguin to the right of the bunny?",yes,Body,Position
+q_175,5,main,images/q_175_body_position_Elephant_down_rot270_cam300.jpg,"Relative to the bunny's body coordinate axes, is the elephant below the bunny?",yes,Body,Position
+q_177,5,main,images/q_177_body_position_Airplane_up_rot90_cam300.jpg,"Relative to the teddy bear's body coordinate axes, is the airplane below the teddy bear?",no,Body,Position
+q_178,5,main,images/q_178_body_position_Toy_Duck_lr_b_rot90_cam330.jpg,"Relative to the bunny's body coordinate axes, is the toy duck to the right of the bunny?",no,Body,Position
+q_181,5,main,images/q_181_body_orientation_Robot_lr_a_rot270_cam000.jpg,"Relative to the bunny's body coordinate axes, is the robot facing left?",no,Body,Orientation
+q_185,5,main,images/q_185_body_orientation_Piggy_bank_fb_a_rot0_cam030.jpg,"Relative to Pinocchio's body coordinate axes, is the piggy bank facing forward?",yes,Body,Orientation
+q_190,5,main,images/q_190_body_orientation_Penguin_teddy_on_target_under_rot90_cam090.jpg,"Relative to the bunny's body coordinate axes, is the penguin facing left?",yes,Body,Orientation
+q_207,5,main,images/q_207_body_orientation_Elephant_fb_a_rot0_cam240.jpg,"Relative to the teddy bear's body coordinate axes, is the elephant facing backward?",no,Body,Orientation
+q_212,5,main,images/q_212_body_orientation_Cat_fb_a_rot180_cam300.jpg,"Relative to Pinocchio's body coordinate axes, is the cat facing backward?",yes,Body,Orientation
+q_214,5,main,images/q_214_body_orientation_Cat_teddy_on_target_under_rot90_cam330.jpg,"Relative to the bunny's body coordinate axes, is the cat facing right?",no,Body,Orientation
+q_219,5,main,images/q_219_head_position_Cat_fb_a_rot180_cam000.jpg,"Relative to the teddy bear's head coordinate axes, is the cat to the left of the teddy bear?",yes,Head,Position
+q_233,5,main,images/q_233_head_position_Airplane_fb_b_rot0_cam150.jpg,"Relative to Pinocchio's head coordinate axes, is the airplane to the right of Pinocchio?",no,Head,Position
+q_237,5,main,images/q_237_head_position_Airplane_lr_a_rot270_cam180.jpg,"Relative to the teddy bear's head coordinate axes, is the airplane in front of the teddy bear?",no,Head,Position
+q_241,5,main,images/q_241_head_position_Robot_up_rot90_cam240.jpg,"Relative to the bunny's head coordinate axes, is the robot above the bunny?",yes,Head,Position
+q_245,5,main,images/q_245_head_position_Penguin_lr_a_rot270_cam270.jpg,"Relative to Pinocchio's head coordinate axes, is the penguin behind Pinocchio?",no,Head,Position
+q_249,5,main,images/q_249_head_position_Toy_Train_up_rot90_cam300.jpg,"Relative to the teddy bear's head coordinate axes, is the toy train above the teddy bear?",yes,Head,Position
+q_260,5,main,images/q_260_head_orientation_Elephant_teddy_under_target_on_rot270_cam060.jpg,"Relative to Pinocchio's head coordinate axes, is the elephant facing forward?",yes,Head,Orientation
+q_267,5,main,images/q_267_head_orientation_Cat_lr_a_rot270_cam120.jpg,"Relative to the teddy bear's head coordinate axes, is the cat facing backward?",yes,Head,Orientation
+q_270,5,main,images/q_270_head_orientation_Airplane_lr_b_rot90_cam150.jpg,"Relative to the teddy bear's head coordinate axes, is the airplane facing backward?",no,Head,Orientation
+q_279,5,main,images/q_279_head_orientation_Piggy_bank_fb_a_rot0_cam240.jpg,"Relative to the teddy bear's head coordinate axes, is the piggy bank facing left?",no,Head,Orientation
+q_280,5,main,images/q_280_head_orientation_Dog_fb_b_rot180_cam270.jpg,"Relative to the bunny's head coordinate axes, is the dog facing right?",yes,Head,Orientation
+q_288,5,main,images/q_288_head_orientation_Dog_teddy_under_target_on_rot90_cam330.jpg,"Relative to the teddy bear's head coordinate axes, is the dog facing forward?",no,Head,Orientation
+q_008,6,main,images/q_008_viewer_position_Dog_lr_a_rot90_cam060.jpg,"Relative to the viewer, is the dog to the left of Pinocchio?",yes,Viewer,Position
+q_009,6,main,images/q_009_viewer_position_Airplane_fb_b_rot180_cam060.jpg,"Relative to the viewer, is the airplane to the left of the teddy bear?",no,Viewer,Position
+q_023,6,main,images/q_023_viewer_position_Robot_teddy_on_target_under_rot270_cam210.jpg,"Relative to the viewer, is the robot to the left of Pinocchio?",yes,Viewer,Position
+q_031,6,main,images/q_031_viewer_position_Elephant_fb_a_rot0_cam300.jpg,"Relative to the viewer, is the elephant to the left of the bunny?",no,Viewer,Position
+q_032,6,main,images/q_032_viewer_position_Elephant_lr_b_rot90_cam300.jpg,"Relative to the viewer, is the elephant to the left of Pinocchio?",no,Viewer,Position
+q_035,6,main,images/q_035_viewer_position_Penguin_up_rot90_cam330.jpg,"Relative to the viewer, is the penguin to the right of Pinocchio?",yes,Viewer,Position
+q_041,6,main,images/q_041_viewer_orientation_Car_down_rot270_cam030.jpg,"Relative to the viewer, is the car facing right?",no,Viewer,Orientation
+q_042,6,main,images/q_042_viewer_orientation_Dog_fb_a_rot180_cam030.jpg,"Relative to the viewer, is the dog facing forward?",no,Viewer,Orientation
+q_048,6,main,images/q_048_viewer_orientation_Cat_fb_b_rot180_cam090.jpg,"Relative to the viewer, is the cat facing left?",no,Viewer,Orientation
+q_056,6,main,images/q_056_viewer_orientation_Cat_teddy_under_target_on_rot90_cam180.jpg,"Relative to the viewer, is the cat facing left?",yes,Viewer,Orientation
+q_069,6,main,images/q_069_viewer_orientation_Car_lr_b_rot270_cam300.jpg,"Relative to the viewer, is the car facing left?",yes,Viewer,Orientation
+q_070,6,main,images/q_070_viewer_orientation_Piggy_bank_fb_b_rot0_cam330.jpg,"Relative to the viewer, is the piggy bank facing forward?",yes,Viewer,Orientation
+q_075,6,main,images/q_075_object_position_Airplane_teddy_under_target_on_rot90_cam000.jpg,"Relative to the teddy bear's coordinate axes, is the airplane above the teddy bear?",yes,Object,Position
+q_083,6,main,images/q_083_object_position_Toy_Duck_fb_a_rot0_cam090.jpg,"Relative to Pinocchio's coordinate axes, is the toy duck behind Pinocchio?",no,Object,Position
+q_085,6,main,images/q_085_object_position_Toy_Train_fb_b_rot0_cam120.jpg,"Relative to the bunny's coordinate axes, is the toy train behind the bunny?",yes,Object,Position
+q_097,6,main,images/q_097_object_position_Toy_Duck_teddy_on_target_under_rot90_cam240.jpg,"Relative to the bunny's coordinate axes, is the toy duck above the bunny?",no,Object,Position
+q_098,6,main,images/q_098_object_position_Toy_Train_lr_a_rot90_cam240.jpg,"Relative to Pinocchio's coordinate axes, is the toy train to the right of Pinocchio?",yes,Object,Position
+q_102,6,main,images/q_102_object_position_Dog_lr_b_rot90_cam270.jpg,"Relative to the teddy bear's coordinate axes, is the dog to the right of the teddy bear?",no,Object,Position
+q_110,6,main,images/q_110_object_orientation_Airplane_teddy_under_target_on_rot270_cam000.jpg,"Relative to Pinocchio's coordinate axes, is the airplane facing left?",no,Object,Orientation
+q_115,6,main,images/q_115_object_orientation_Dog_up_rot270_cam060.jpg,"Relative to the bunny's coordinate axes, is the dog facing right?",yes,Object,Orientation
+q_125,6,main,images/q_125_object_orientation_Cat_fb_b_rot0_cam150.jpg,"Relative to Pinocchio's coordinate axes, is the cat facing forward?",yes,Object,Orientation
+q_126,6,main,images/q_126_object_orientation_Dog_fb_a_rot0_cam150.jpg,"Relative to the teddy bear's coordinate axes, is the dog facing backward?",no,Object,Orientation
+q_135,6,main,images/q_135_object_orientation_Robot_fb_a_rot180_cam240.jpg,"Relative to the teddy bear's coordinate axes, is the robot facing forward?",no,Object,Orientation
+q_136,6,main,images/q_136_object_orientation_Elephant_lr_b_rot270_cam270.jpg,"Relative to the bunny's coordinate axes, is the elephant facing right?",yes,Object,Orientation
+q_147,6,main,images/q_147_body_position_Penguin_down_rot90_cam000.jpg,"Relative to the teddy bear's body coordinate axes, is the penguin above the teddy bear?",no,Body,Position
+q_148,6,main,images/q_148_body_position_Cat_lr_b_rot270_cam030.jpg,"Relative to the bunny's body coordinate axes, is the cat to the right of the bunny?",no,Body,Position
+q_158,6,main,images/q_158_body_position_Piggy_bank_fb_a_rot180_cam120.jpg,"Relative to Pinocchio's body coordinate axes, is the piggy bank in front of Pinocchio?",yes,Body,Position
+q_159,6,main,images/q_159_body_position_Toy_Duck_up_rot90_cam120.jpg,"Relative to the teddy bear's body coordinate axes, is the toy duck below the teddy bear?",no,Body,Position
+q_170,6,main,images/q_170_body_position_Penguin_fb_b_rot180_cam240.jpg,"Relative to Pinocchio's body coordinate axes, is the penguin behind Pinocchio?",yes,Body,Position
+q_173,6,main,images/q_173_body_position_Cat_lr_b_rot270_cam270.jpg,"Relative to Pinocchio's body coordinate axes, is the cat to the left of Pinocchio?",yes,Body,Position
+q_193,6,main,images/q_193_body_orientation_Car_fb_b_rot0_cam120.jpg,"Relative to the bunny's body coordinate axes, is the car facing backward?",no,Body,Orientation
+q_196,6,main,images/q_196_body_orientation_Piggy_bank_lr_a_rot90_cam150.jpg,"Relative to the bunny's body coordinate axes, is the piggy bank facing left?",yes,Body,Orientation
+q_200,6,main,images/q_200_body_orientation_Airplane_fb_b_rot180_cam180.jpg,"Relative to Pinocchio's body coordinate axes, is the airplane facing backward?",yes,Body,Orientation
+q_201,6,main,images/q_201_body_orientation_Toy_Duck_up_rot270_cam180.jpg,"Relative to the teddy bear's body coordinate axes, is the toy duck facing left?",no,Body,Orientation
+q_202,6,main,images/q_202_body_orientation_Toy_Duck_lr_a_rot90_cam210.jpg,"Relative to the bunny's body coordinate axes, is the toy duck facing right?",no,Body,Orientation
+q_213,6,main,images/q_213_body_orientation_Toy_Train_down_rot270_cam300.jpg,"Relative to the teddy bear's body coordinate axes, is the toy train facing right?",yes,Body,Orientation
+q_227,6,main,images/q_227_head_position_Elephant_lr_a_rot90_cam090.jpg,"Relative to Pinocchio's head coordinate axes, is the elephant in front of Pinocchio?",no,Head,Position
+q_232,6,main,images/q_232_head_position_Piggy_bank_lr_b_rot90_cam150.jpg,"Relative to the bunny's head coordinate axes, is the piggy bank behind the bunny?",yes,Head,Position
+q_239,6,main,images/q_239_head_position_Penguin_teddy_on_target_under_rot90_cam210.jpg,"Relative to Pinocchio's head coordinate axes, is the penguin below Pinocchio?",yes,Head,Position
+q_246,6,main,images/q_246_head_position_Toy_Train_up_rot270_cam270.jpg,"Relative to the teddy bear's head coordinate axes, is the toy train below the teddy bear?",no,Head,Position
+q_250,6,main,images/q_250_head_position_Airplane_lr_b_rot270_cam330.jpg,"Relative to the bunny's head coordinate axes, is the airplane behind the bunny?",no,Head,Position
+q_252,6,main,images/q_252_head_position_Toy_Train_fb_a_rot180_cam330.jpg,"Relative to the teddy bear's head coordinate axes, is the toy train to the left of the teddy bear?",yes,Head,Position
+q_253,6,main,images/q_253_head_orientation_Car_teddy_on_target_under_rot270_cam000.jpg,"Relative to the bunny's head coordinate axes, is the car facing forward?",no,Head,Orientation
+q_258,6,main,images/q_258_head_orientation_Elephant_fb_a_rot180_cam030.jpg,"Relative to the teddy bear's head coordinate axes, is the elephant facing right?",no,Head,Orientation
+q_259,6,main,images/q_259_head_orientation_Cat_lr_a_rot90_cam060.jpg,"Relative to the bunny's head coordinate axes, is the cat facing backward?",yes,Head,Orientation
+q_262,6,main,images/q_262_head_orientation_Car_teddy_on_target_under_rot270_cam090.jpg,"Relative to the bunny's head coordinate axes, is the car facing backward?",no,Head,Orientation
+q_271,6,main,images/q_271_head_orientation_Robot_lr_a_rot270_cam180.jpg,"Relative to the bunny's head coordinate axes, is the robot facing backward?",yes,Head,Orientation
+q_276,6,main,images/q_276_head_orientation_Elephant_lr_b_rot270_cam210.jpg,"Relative to the teddy bear's head coordinate axes, is the elephant facing forward?",yes,Head,Orientation
