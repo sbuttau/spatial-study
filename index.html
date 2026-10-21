@@ -500,11 +500,21 @@ function renderSendFailed() {
 }
 
 /* ---------- start ---------- */
-async function assignSet(sets, sessionId) {
-  if (!CONFIG.ENDPOINT) return sets[randInt(sets.length)];
-  const json = await getJSON(`${CONFIG.ENDPOINT}?action=assign&sets=${encodeURIComponent(sets.join(","))}` +
-    `&session=${encodeURIComponent(sessionId)}${TEST ? "&test=1" : ""}`);
-  return json && sets.includes(String(json.set)) ? String(json.set) : sets[randInt(sets.length)];
+// A participant code keeps the set it was first given: the sheet remembers it, and so does this
+// browser in case the sheet can't be reached.
+async function assignSet(sets, sessionId, pid) {
+  const key = CONFIG.STUDY_ID + (TEST ? ":test" : "") + ":set:" + (pid || "");
+  let known = null;
+  try { known = pid ? localStorage.getItem(key) : null; } catch {}
+  let set = null;
+  if (CONFIG.ENDPOINT) {
+    const json = await getJSON(`${CONFIG.ENDPOINT}?action=assign&sets=${encodeURIComponent(sets.join(","))}` +
+      `&session=${encodeURIComponent(sessionId)}${pid ? "&pid=" + encodeURIComponent(pid) : ""}${TEST ? "&test=1" : ""}`, 15000);
+    if (json && sets.includes(String(json.set))) set = String(json.set);
+  }
+  if (!set) set = known && sets.includes(known) ? known : sets[randInt(sets.length)];
+  try { if (pid) localStorage.setItem(key, set); } catch {}
+  return set;
 }
 
 // Has this participant code already finished? If the sheet can't be reached, let them in:
@@ -558,7 +568,7 @@ async function init() {
     return renderError("This link isn't complete",
       `Please use the exact link you were sent, or contact the researcher${contact} for a new one.`);
   }
-  const set = asked && sets.includes(asked) ? asked : await assignSet(sets, session_id);
+  const set = asked && sets.includes(asked) ? asked : await assignSet(sets, session_id, pid);
 
   S = {
     v: 1,
