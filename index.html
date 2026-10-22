@@ -143,7 +143,7 @@
 -->
 <template id="intro-text">
   <h1>Spatial reasoning study</h1>
-  <p>Thank you for taking part! The study takes about {{MINUTES}} minutes.</p>
+  <p>Thank you for taking part! The study takes about {{MINUTES}} minutes, plus some extra time for reading instructions and a short survey at the end.</p>
   <p>You will see {{N}} images of small scenes. Each scene contains a <strong>reference object</strong> (a teddy bear, a bunny or Pinocchio) and a <strong>target object</strong> (for example a cat, a car or a toy train). For each image, you will answer one yes/no question about where the target object is, or which way it is facing.</p>
   <h2>Each question tells you from whose point of view to answer</h2>
   <ul>
@@ -167,7 +167,7 @@
     </div>
     <figcaption>From left to right: the viewer's point of view; the teddy bear's own (object) point of view; the bunny's head and Pinocchio's head (part) points of view. The arrows show each one's own up, front, left and right.</figcaption>
   </figure>
-  <p class="consent">Participation is voluntary and you can stop at any time. We record your answers and response times under a participant code, not your name; only the research team can link the code to your identity, and results will be reported only in aggregate. By continuing, you agree to take part.</p>
+  <p class="consent">Participation is voluntary and you can stop at any time. We record your answers and response times under a participant code, not your name; only the research team can link the code to your identity, but results will be reported only in aggregate. By continuing, you agree to take part.</p>
 </template>
 
 <script>
@@ -177,7 +177,7 @@
 const CONFIG = {
   ENDPOINT: "https://script.google.com/macros/s/AKfycbw2Qgl3Jwd0nzkRe_hMo3gbPdMkSmiCg4iOG-vgs2sObQ64M_ofT0eoDBsWOfyjr4ox/exec",            // Google Apps Script web app URL (ends in /exec). Empty = demo mode: nothing is sent.
   TRIALS_FILE: "trials_288_lowercase.csv",
-  MINUTES: 8,             // shown on the intro screen
+  MINUTES: 10,             // shown on the intro screen
   COMPLETION_URL: "",      // optional: link shown at the end (e.g. your Prolific completion URL)
   CONTACT_EMAIL: "",       // shown if answers can't be sent
   INTER_TRIAL_MS: 300,     // blank pause between questions
