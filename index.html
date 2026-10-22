@@ -209,7 +209,8 @@ const app = document.getElementById("app");
 const params = new URLSearchParams(location.search);
 const TEST = params.get("test") === "1";   // ?test=1: your own trial runs, never blocked, saved to the test tabs
 const STORE_KEY = CONFIG.STUDY_ID + (TEST ? ":test" : "") + ":session";
-const DONE_KEY = CONFIG.STUDY_ID + ":done";
+const PID = params.get("pid") || params.get("PROLIFIC_PID") || "";   // participant code from the link
+const DONE_KEY = CONFIG.STUDY_ID + ":done" + (PID ? ":" + PID : "");   // "finished" is remembered per code
 let S = null;              // session state
 let keyHandler = null;
 
@@ -518,6 +519,7 @@ async function submit() {
     try {
       const res = await fetch(CONFIG.ENDPOINT, opts);
       const json = await res.json();
+      if (json && json.used) { store.clear(); return renderAlreadyDone(); }
       if (json && json.ok) return finish();
     } catch {
       // The reply couldn't be read (often a browser cross-site restriction even though the
@@ -573,19 +575,22 @@ function renderSendFailed() {
 }
 
 /* ---------- start ---------- */
-// A participant code keeps the set it was first given: the sheet remembers it, and so does this
-// browser in case the sheet can't be reached.
-async function assignSet(sets, sessionId, pid) {
+// The sheet records which set each session gets, and refuses a participant code it has already
+// handed out (null). `fixed` is the set the link asked for. This browser remembers the set in case
+// the sheet can't be reached.
+async function assignSet(sets, sessionId, pid, fixed) {
   const key = CONFIG.STUDY_ID + (TEST ? ":test" : "") + ":set:" + (pid || "");
   let known = null;
   try { known = pid ? localStorage.getItem(key) : null; } catch {}
   let set = null;
   if (CONFIG.ENDPOINT) {
     const json = await getJSON(`${CONFIG.ENDPOINT}?action=assign&sets=${encodeURIComponent(sets.join(","))}` +
-      `&session=${encodeURIComponent(sessionId)}${pid ? "&pid=" + encodeURIComponent(pid) : ""}${TEST ? "&test=1" : ""}`, 15000);
+      `&session=${encodeURIComponent(sessionId)}${pid ? "&pid=" + encodeURIComponent(pid) : ""}` +
+      `${fixed ? "&set=" + encodeURIComponent(fixed) : ""}${TEST ? "&test=1" : ""}`, 15000);
+    if (json && json.used) return null;
     if (json && sets.includes(String(json.set))) set = String(json.set);
   }
-  if (!set) set = known && sets.includes(known) ? known : sets[randInt(sets.length)];
+  if (!set) set = fixed || (known && sets.includes(known) ? known : sets[randInt(sets.length)]);
   try { if (pid) localStorage.setItem(key, set); } catch {}
   return set;
 }
@@ -601,7 +606,7 @@ async function alreadyTookPart(pid) {
 function renderAlreadyDone() {
   const link = CONFIG.COMPLETION_URL
     ? `<div class="actions"><a class="button primary" href="${esc(CONFIG.COMPLETION_URL)}">Finish the study</a></div>` : "";
-  render(`<h1>You've already taken part</h1><p>Our records show you have already completed this study, so you can't take it again. Thank you for your help!</p>${link}`);
+  render(`<h1>You've already taken part</h1><p>Our records show this participant code has already been used, so the study can't be taken again with it. Thank you for your help!</p>${link}`);
 }
 
 async function init() {
@@ -609,7 +614,8 @@ async function init() {
   const saved = store.load();
   const linkSet = params.get("set");
   const sameSet = !linkSet || !saved || String(saved.set) === linkSet;   // a link for another set starts fresh
-  if (saved && saved.v === 1 && sameSet && ["practice", "main", "survey", "submit"].includes(saved.phase)) { S = saved; return renderResume(); }
+  const samePid = !saved || (saved.pid || "") === PID;                    // so does a link with another code
+  if (saved && saved.v === 1 && sameSet && samePid && ["practice", "main", "survey", "submit"].includes(saved.phase)) { S = saved; return renderResume(); }
 
   if (location.protocol === "file:") {
     return renderError("Open this page through a web address",
@@ -632,7 +638,7 @@ async function init() {
   if (!sets.length) return renderError("The question file has no sets", "Give each question a set number in the 'set' column.");
 
   const session_id = uid();
-  const pid = params.get("pid") || params.get("PROLIFIC_PID");
+  const pid = PID;
   const participant_id = pid || (TEST ? "test-" : "anon-") + session_id.slice(0, 6);
   if (!TEST && await alreadyTookPart(pid)) return renderAlreadyDone();
   const asked = params.get("set");
@@ -641,12 +647,14 @@ async function init() {
     return renderError("This link isn't complete",
       `Please use the exact link you were sent, or contact the researcher${contact} for a new one.`);
   }
-  const set = asked && sets.includes(asked) ? asked : await assignSet(sets, session_id, pid);
+  const set = await assignSet(sets, session_id, pid, asked && sets.includes(asked) ? asked : null);
+  if (!set) return renderAlreadyDone();
 
   S = {
     v: 1,
     session_id,
     participant_id,
+    pid,
     set,
     phase: "intro",
     i: 0,
