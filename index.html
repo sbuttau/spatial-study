@@ -117,6 +117,19 @@
   /* Messages */
   .message { max-width: 620px; }
   .message h1 { font-size: 1.6rem; }
+  /* End questionnaire */
+  .survey .q { border: 0; padding: 0; margin: 22px 0 0; }
+  .survey .q-label { display: block; font-weight: 700; margin-bottom: 8px; padding: 0; }
+  .survey .q-label .muted { font-weight: 400; }
+  .survey .opts { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .survey .opts label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  .survey .opts input { width: 1.1em; height: 1.1em; accent-color: var(--walnut); }
+  .survey .anchors { display: flex; justify-content: space-between; gap: 12px; font-size: 0.9rem; margin: 6px 0 0; }
+  .survey input[type="text"], .survey textarea {
+    font: inherit; width: 100%; padding: 10px 12px; color: var(--ink); background: var(--paper);
+    border: 2px solid var(--line); border-radius: 6px;
+  }
+  .survey input:focus-visible, .survey textarea:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
   .detail { font-size: 0.9rem; color: var(--muted); background: var(--walnut-soft); border-radius: 4px; padding: 8px 10px; overflow-wrap: anywhere; }
 </style>
 </head>
@@ -173,6 +186,25 @@ const CONFIG = {
 };
 /* ==================================================== */
 
+/* ============ END QUESTIONNAIRE (edit freely) ============
+  Shown after the last question, before the answers are saved. Each id becomes a column
+  in the sheet's "survey" tab. Empty list = no questionnaire.
+  type: "choice" (pick one of `options`), "scale" (1..`points`, `anchors` name both ends),
+        "text" (one line) or "longtext" (a few lines).
+  required: false lets participants leave it blank.
+*/
+const SURVEY = [
+  { id: "age", type: "text", label: "How old are you?"},
+  { id: "field", type: "choice", label: "What is your field of study or work?", options: ["Psychology or neuroscience", "Computer Science or Engineering", "Mathematics", "Other"]},
+  { id: "english", type: "choice", label: "How would you rate your English?", options: ["Basic", "Intermediate", "Advanced", "Native"]},
+  { id: "difficulty", type: "scale", label: "How difficult did you find the task?", points: 5, anchors: ["Very easy", "Very hard"] },
+  { id: "confidence", type: "scale", label: "How confident were you in your answers?", points: 5, anchors: ["Not confident at all", "Very confident"] },
+  { id: "familiarity", type: "choice", label: "Had you seen the images or questions of this study before?", options: ["Yes", "No"] },
+  { id: "focus", type: "scale", label: "How well were you able to concentrate on the test?", points: 5, anchors: ["Very poorly", "Very well"] },
+  { id: "comments", type: "longtext", label: "Any comments, or anything that was unclear?", required: false },
+];
+/* ==================================================== */
+
 const app = document.getElementById("app");
 const params = new URLSearchParams(location.search);
 const TEST = params.get("test") === "1";   // ?test=1: your own trial runs, never blocked, saved to the test tabs
@@ -183,7 +215,7 @@ let keyHandler = null;
 
 document.addEventListener("keydown", (e) => { if (keyHandler) keyHandler(e); });
 window.addEventListener("beforeunload", (e) => {
-  if (S && (S.phase === "practice" || S.phase === "main")) { e.preventDefault(); e.returnValue = ""; }
+  if (S && ["practice", "main", "survey"].includes(S.phase)) { e.preventDefault(); e.returnValue = ""; }
 });
 
 /* ---------- small helpers ---------- */
@@ -306,14 +338,15 @@ function startMain() { S.phase = "main"; S.i = 0; store.save(); renderTrial(); }
 function renderResume() {
   const list = S.phase === "practice" ? S.practice : S.main;
   const doneCount = S.phase === "main" ? S.i : 0;
+  const trials = S.phase === "practice" || S.phase === "main";
   render(`
     <h1>Welcome back</h1>
-    <p>${S.phase === "submit"
-      ? "You answered every question, but your answers haven't been saved yet."
+    <p>${S.phase === "submit" ? "You answered every question, but your answers haven't been saved yet."
+      : S.phase === "survey" ? "You answered every question. There are just a few last questions left."
       : `You've answered ${doneCount} of ${S.main.length} questions. You can continue where you left off.`}</p>
     <div class="actions"><button class="primary" id="go">${S.phase === "submit" ? "Save my answers" : "Continue"}</button></div>`);
-  document.getElementById("go").onclick = () => (S.phase === "submit" ? submit() : renderTrial());
-  if (S.phase !== "submit") preload(list, S.i, 2);
+  document.getElementById("go").onclick = () => (S.phase === "submit" ? submit() : S.phase === "survey" ? renderSurvey() : renderTrial());
+  if (trials) preload(list, S.i, 2);
 }
 
 function renderTrial() {
@@ -383,7 +416,7 @@ function showPracticeFeedback(section, row, r) {
   const msg = !truth ? "Thanks."
     : r === truth ? "Correct."
     : `Not quite: the correct answer is <strong>${truth === "yes" ? "Yes" : "No"}</strong>.`;
-  const why = row.explanation ? `<p class="muted">${esc(row.explanation)}</p>` : "";
+  const why = truth && r !== truth && row.explanation ? `<p class="muted">${esc(row.explanation)}</p>` : "";
   fb.innerHTML = `<p>${msg}</p>${why}<div class="actions"><button class="primary" id="next">Next</button></div>`;
   const next = fb.querySelector("#next");
   next.onclick = advance;
@@ -399,7 +432,7 @@ function record(row, response, rt) {
     phase: S.phase,
     position: S.i + 1,
   };
-  for (const c of S.columns) rec[c === "set" ? "item_set" : c] = row[c] ?? "";
+  for (const c of S.columns) if (c !== "explanation") rec[c === "set" ? "item_set" : c] = row[c] ?? "";
   const truth = (row.answer || "").toLowerCase();
   rec.response = response;
   rec.rt_ms = rt;
@@ -415,10 +448,49 @@ function advance() {
   const list = S.phase === "practice" ? S.practice : S.main;
   if (S.i < list.length) return renderTrial();
   if (S.phase === "practice") { S.phase = "main"; S.i = 0; store.save(); return renderMainIntro(); }
-  S.phase = "submit";
   S.finished_at = new Date().toISOString();
+  if (SURVEY.length) { S.phase = "survey"; store.save(); return renderSurvey(); }
+  S.phase = "submit";
   store.save();
   submit();
+}
+
+/* ---------- end questionnaire ---------- */
+function renderSurvey() {
+  const field = (q) => {
+    const name = "survey_" + q.id;
+    const req = q.required === false ? "" : " required";
+    const label = esc(q.label) + (q.required === false ? ` <span class="muted">(optional)</span>` : "");
+    if (q.type === "text") return `<div class="q"><label class="q-label" for="${name}">${label}</label><input type="text" id="${name}" name="${esc(q.id)}"${req}></div>`;
+    if (q.type === "longtext") return `<div class="q"><label class="q-label" for="${name}">${label}</label><textarea id="${name}" name="${esc(q.id)}" rows="3"${req}></textarea></div>`;
+    const options = q.type === "scale" ? Array.from({ length: q.points || 5 }, (_, k) => String(k + 1)) : q.options || [];
+    const radios = options.map((o) => `<label><input type="radio" name="${esc(q.id)}" value="${esc(o)}"${req}>${esc(o)}</label>`).join("");
+    const ends = q.type === "scale" && q.anchors
+      ? `<p class="anchors muted"><span>1 = ${esc(q.anchors[0])}</span><span>${options.length} = ${esc(q.anchors[1])}</span></p>` : "";
+    return `<fieldset class="q"><legend class="q-label">${label}</legend><div class="opts">${radios}</div>${ends}</fieldset>`;
+  };
+  render(`
+    <h1>A few last questions</h1>
+    <p>You've answered all the questions. Before saving, please answer these short questions.</p>
+    <form id="survey" class="survey">
+      ${SURVEY.map(field).join("")}
+      <div class="actions"><button class="primary" type="submit">Save my answers</button></div>
+    </form>`);
+  scrollTo(0, 0);
+  document.getElementById("survey").onsubmit = (e) => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    S.survey = Object.fromEntries(SURVEY.map((q) => [q.id, String(fd.get(q.id) ?? "").trim()]));
+    S.phase = "submit";
+    store.save();
+    submit();
+  };
+}
+
+// Downloaded CSVs carry the questionnaire answers on every row, as survey_<id> columns.
+function exportRows() {
+  const extra = Object.fromEntries(Object.entries(S.survey || {}).map(([k, v]) => ["survey_" + k, v]));
+  return S.results.map((r) => ({ ...r, ...extra }));
 }
 
 /* ---------- saving ---------- */
@@ -438,6 +510,7 @@ async function submit() {
     test: TEST,
     columns: orderedKeys(S.results),
     trials: S.results,
+    survey: S.survey || {},
   };
   const body = JSON.stringify(payload);
   const opts = { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body };
@@ -479,7 +552,7 @@ function renderDone(demo) {
       ${scoreSummary()}
       <p>This page is in demo mode, so your answers weren't sent anywhere. Add the endpoint URL in <code>CONFIG</code> to save answers to the sheet.</p>
       <div class="actions"><button class="secondary" id="dl">Download answers (CSV)</button></div>`);
-    document.getElementById("dl").onclick = () => download(`answers_${S.participant_id}.csv`, toCSV(S.results));
+    document.getElementById("dl").onclick = () => download(`answers_${S.participant_id}.csv`, toCSV(exportRows()));
     return;
   }
   render(`<h1>Thank you!</h1>${scoreSummary()}<p>Your answers have been saved. You can close this page.</p>${link}`);
@@ -496,7 +569,7 @@ function renderSendFailed() {
       <button class="secondary" id="dl">Download answers (CSV)</button>
     </div>`);
   document.getElementById("retry").onclick = submit;
-  document.getElementById("dl").onclick = () => download(`answers_${S.participant_id}_${S.session_id}.csv`, toCSV(S.results));
+  document.getElementById("dl").onclick = () => download(`answers_${S.participant_id}_${S.session_id}.csv`, toCSV(exportRows()));
 }
 
 /* ---------- start ---------- */
@@ -536,7 +609,7 @@ async function init() {
   const saved = store.load();
   const linkSet = params.get("set");
   const sameSet = !linkSet || !saved || String(saved.set) === linkSet;   // a link for another set starts fresh
-  if (saved && saved.v === 1 && sameSet && ["practice", "main", "submit"].includes(saved.phase)) { S = saved; return renderResume(); }
+  if (saved && saved.v === 1 && sameSet && ["practice", "main", "survey", "submit"].includes(saved.phase)) { S = saved; return renderResume(); }
 
   if (location.protocol === "file:") {
     return renderError("Open this page through a web address",

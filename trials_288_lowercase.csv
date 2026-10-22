@@ -1,9 +1,9 @@
-trial_id,set,type,image,question,answer,frame,task
-p1,practice,practice,images/teddy_dog.jpg,"Relative to the viewer, is the dog below the teddy bear?",yes,Viewer,Position
-p2,practice,practice,images/pinocchio_airplane.jpg,"Relative to the viewer, is the airplane in front of Pinocchio?",yes,Viewer,Position
-p3,practice,practice,images/bunny_duck.jpg,"Relative to the bunny's head coordinate axes, is the toy duck facing forward?",no,Head,Orientation
-p4,practice,practice,images/teddy_penguin.jpg,"Relative to the teddy bear's body coordinate axes, is the penguin facing left?",yes,Body,Orientation
-p5,practice,practice,images/bunny_elephant.jpg,"Relative to the bunny's body coordinate axes, is the elephant to the left of the bunny?",no,Body,Position
+trial_id,set,type,image,question,answer,frame,task,explanation
+p1,practice,practice,images/teddy_dog.jpg,"Relative to the viewer, is the dog below the teddy bear?",yes,Viewer,Position,"Relative to the viewer means as you see the image. The dog is on the floor under the table, and the teddy bear is sitting on top of it, so the dog is below the teddy bear."
+p2,practice,practice,images/pinocchio_airplane.jpg,"Relative to the viewer, is the airplane in front of Pinocchio?",yes,Viewer,Position,"Relative to the viewer, in front of means closer to you. The airplane sits between you and Pinocchio, nearer the front edge of the table, so it is in front of him."
+p3,practice,practice,images/bunny_duck.jpg,"Relative to the bunny's head coordinate axes, is the toy duck facing forward?",no,Head,Orientation,"Look at where the bunny's head points: towards you. Facing forward would mean the duck points the same way. The duck is turned away from you (you see its back), so it faces the opposite way, not forward."
+p4,practice,practice,images/teddy_penguin.jpg,"Relative to the teddy bear's body coordinate axes, is the penguin facing left?",yes,Body,Orientation,"Ignore how the picture is tilted and use the teddy bear's body. Imagine sitting where the teddy is, facing the way its body faces (its feet point that way). From there, the penguin points towards the teddy's left, so the answer is yes."
+p5,practice,practice,images/bunny_elephant.jpg,"Relative to the bunny's body coordinate axes, is the elephant to the left of the bunny?",no,Body,Position,"Imagine sitting where the bunny is, facing the way its body faces (where its legs point). The elephant is to the right of the bunny, not to its left."
 q_015,1,main,images/q_015_viewer_position_Elephant_fb_a_rot180_cam120.jpg,"Relative to the viewer, is the elephant in front of the teddy bear?",no,Viewer,Position
 q_017,1,main,images/q_017_viewer_position_Toy_Train_lr_b_rot270_cam150.jpg,"Relative to the viewer, is the toy train in front of Pinocchio?",yes,Viewer,Position
 q_019,1,main,images/q_019_viewer_position_Penguin_up_rot270_cam180.jpg,"Relative to the viewer, is the penguin below the bunny?",yes,Viewer,Position
