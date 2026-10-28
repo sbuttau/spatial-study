@@ -530,7 +530,7 @@ async function submit() {
     try {
       const res = await fetch(CONFIG.ENDPOINT, opts);
       const json = await res.json();
-      if (json && json.used) { store.clear(); return renderAlreadyDone(); }
+      if (json && json.used) return renderRefused();   // keep the answers: the refusal may be a mistake
       if (json && json.ok) return finish();
     } catch {
       // The reply couldn't be read (often a browser cross-site restriction even though the
@@ -569,6 +569,16 @@ function renderDone(demo) {
     return;
   }
   render(`<h1>Thank you!</h1>${scoreSummary()}<p>Your answers have been saved. You can close this page.</p>${link}`);
+}
+
+function renderRefused() {
+  const contact = CONFIG.CONTACT_EMAIL
+    ? ` and email the file to <a href="mailto:${esc(CONFIG.CONTACT_EMAIL)}">${esc(CONFIG.CONTACT_EMAIL)}</a>` : " and send the file to the researcher";
+  render(`
+    <h1>This code has already been used</h1>
+    <p>Our records show this participant code has already been used, so these answers weren't saved. Please download them${contact}.</p>
+    <div class="actions"><button class="primary" id="dl">Download answers (CSV)</button></div>`);
+  document.getElementById("dl").onclick = () => download(`answers_${S.participant_id}_${S.session_id}.csv`, toCSV(exportRows()));
 }
 
 function renderSendFailed() {
